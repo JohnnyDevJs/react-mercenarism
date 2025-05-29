@@ -11,6 +11,9 @@ function App() {
   const [isPending, startTransition] = useTransition()
   const [question, setQuestion] = useState('')
   const [answer, setAnswer] = useState('')
+  const [touched, setTouched] = useState(false);
+
+  const isError = touched && !question.trim();
 
   async function handleSendQuestion() {
     if (!question.trim()) {
@@ -50,7 +53,7 @@ Tudo segue padrões — e foi dominando esses padrões que me especializei em re
       <Grid container spacing={2} sx={{ mb: 2 }}>
         <Grid size={8}>
           <TextField
-          error={!question.trim()}
+            error={isError}
             required
             fullWidth
             label="Pergunta"
@@ -66,7 +69,12 @@ Tudo segue padrões — e foi dominando esses padrões que me especializei em re
             loading={isPending}
             variant="contained"
             color="primary"
-            onClick={handleSendQuestion}
+            onClick={() => {
+              setTouched(true); 
+              handleSendQuestion()
+            }
+            
+            }
             
           >
             Bora lá
