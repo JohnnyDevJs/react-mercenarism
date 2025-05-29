@@ -56,7 +56,7 @@ Tudo segue padrões — e foi dominando esses padrões que me especializei em re
             label="Pergunta"
             size="small"
             value={question}
-            onChange={(e) => setQuestion(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuestion(e.target.value)}
           />
         </Grid>
 
