@@ -1,7 +1,7 @@
 import { useState, useTransition } from 'react'
 
-import { Box, Button, Container, TextField, Typography } from '@mui/material'
-import Grid from '@mui/material/Grid'
+import { Box, Button, Container, TextField, Typography, Grid } from '@mui/material'
+
 
 import { groq } from './lib/groq'
 
